@@ -1,7 +1,7 @@
 package com.hsc.concurrence.threadcoreknowledge.stopThreads;
 
 /**
- *  底层方法优先选择向上抛出InterruptException  让顶层方法即run方法里面去处理。(run方法不能再向上抛出)
+ *  最佳实践1：传递中断底--层方法优先选择向上抛出InterruptException  让顶层方法即run方法里面去处理。(run方法不能再向上抛出)
  *  这样能让编写run方法的人知道中断响应并作出对应的处理。
  * @auther: 侯森川
  * @Date: 2020-5-1 18:06
