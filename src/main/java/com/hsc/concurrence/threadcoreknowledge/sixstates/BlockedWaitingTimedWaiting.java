@@ -45,6 +45,7 @@ public class BlockedWaitingTimedWaiting implements Runnable{
         }
         //预期打印waiting
         System.out.println(thread1.getState());
+        System.out.println(thread2.getState());
 
 
     }
