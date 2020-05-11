@@ -8,9 +8,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 演示多线程安全问题  情况1： a++ 并找出在哪个位置出错且出错多少次
  */
 
-public class MultiThreadError2 implements Runnable{
+public class MultiThreadError1 implements Runnable{
 
-    static MultiThreadError2 instance = new MultiThreadError2();
+    static MultiThreadError1 instance = new MultiThreadError1();
     int index = 0;
     final boolean[] remark = new boolean[100000];
     AtomicInteger rightNum = new AtomicInteger();

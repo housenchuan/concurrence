@@ -15,5 +15,10 @@ public class ThreadStyle extends Thread{
     public static void main(String[] args) {
         ThreadStyle thread = new ThreadStyle();
         thread.start();
+//        for (int i = 0; i < 24*60; i++) {
+//            if(i%23 == 0 && i%60==0) {
+//                System.out.println(i);
+//            }
+//        }
     }
 }
