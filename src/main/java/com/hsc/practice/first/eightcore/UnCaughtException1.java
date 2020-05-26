@@ -6,6 +6,10 @@ package com.hsc.practice.first.eightcore;
  * @Date: 2020-5-25 20:37
  **/
 
-public class UnCaughtException1 {
+public class UnCaughtException1 implements Thread.UncaughtExceptionHandler {
 
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        System.out.println(t.getName()+"出现异常了: "+e.getMessage());
+    }
 }
