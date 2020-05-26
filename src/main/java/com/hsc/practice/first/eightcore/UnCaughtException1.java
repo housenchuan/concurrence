@@ -7,4 +7,5 @@ package com.hsc.practice.first.eightcore;
  **/
 
 public class UnCaughtException1 {
+
 }
