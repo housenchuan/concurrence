@@ -48,6 +48,13 @@ public class ListPractice {
 //        System.out.println((n >= 100) ? 1000 : n + 1);
 //        System.out.println(15&3373752);
 
+
+        Hashtable hashtable = new Hashtable();
+        hashtable.put("name","jack");
+        hashtable.put("age","23");
+        System.out.println(hashtable.keys().hasMoreElements());
+        System.out.println(hashtable.keys().nextElement());
+        System.out.println(hashtable.values());
     }
 
 
