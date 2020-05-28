@@ -1,4 +1,4 @@
-package com.hsc.concurrence.threadcoreknowledge.deadlock;
+package com.hsc.concurrence.deadlock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;

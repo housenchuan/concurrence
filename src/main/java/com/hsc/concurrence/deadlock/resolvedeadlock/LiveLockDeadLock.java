@@ -1,4 +1,4 @@
-package com.hsc.concurrence.threadcoreknowledge.deadlock.resolvedeadlock;
+package com.hsc.concurrence.deadlock.resolvedeadlock;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package com.hsc.concurrence.threadcoreknowledge.deadlock;
+package com.hsc.concurrence.deadlock;
 
 
 import java.lang.management.ManagementFactory;

@@ -1,4 +1,4 @@
-package com.hsc.concurrence.threadcoreknowledge.deadlock.resolvedeadlock;
+package com.hsc.concurrence.deadlock.resolvedeadlock;
 
 /**
  * 通过避免策略 -- 转账换序来避免死锁

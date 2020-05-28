@@ -1,9 +1,4 @@
-package com.hsc.concurrence.threadcoreknowledge.deadlock;
-
-import java.lang.management.ManagementFactory;
-import java.lang.management.ThreadInfo;
-import java.lang.management.ThreadMXBean;
-import java.util.Random;
+package com.hsc.concurrence.deadlock;
 
 /**
  * 演示 哲学家就餐问题

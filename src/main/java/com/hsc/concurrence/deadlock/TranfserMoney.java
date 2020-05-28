@@ -1,4 +1,4 @@
-package com.hsc.concurrence.threadcoreknowledge.deadlock;
+package com.hsc.concurrence.deadlock;
 
 /**
  * 模拟转账锁发生的死锁情况
