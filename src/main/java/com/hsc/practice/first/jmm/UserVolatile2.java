@@ -3,7 +3,7 @@ package com.hsc.practice.first.jmm;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 使用volatile的正确姿势是变量不依赖当前值
+ * 使用volatile的正确姿势是变量不依赖当前值--触发器
  **/
 
 public class UserVolatile2 {
