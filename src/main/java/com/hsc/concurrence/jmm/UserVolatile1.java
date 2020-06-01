@@ -3,22 +3,22 @@ package com.hsc.concurrence.jmm;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 运算结果依赖变量的当前值
+ * 使用volatile的正确姿势是变量不依赖当前值
  **/
 
-public class NoVolatile2 {
+public class UserVolatile1 {
 
-     static volatile boolean flag;
-     static AtomicInteger count = new AtomicInteger();
-     private static void change(){
-        flag = !flag;
-     }
+    static volatile boolean flag = false;
+    static AtomicInteger count = new AtomicInteger();
+    static void change(){
+        flag = true;
+    }
 
     public static void main(String[] args) {
         Runnable task = ()->{
             for (int i = 0; i < 10000; i++) {
                 change();
-                count.incrementAndGet();
+                count.getAndIncrement();
             }
         };
         Thread threadOne = new Thread(task);
@@ -32,7 +32,5 @@ public class NoVolatile2 {
             e.printStackTrace();
         }
         System.out.println(flag);
-        System.out.println(count.get());
-
     }
 }
