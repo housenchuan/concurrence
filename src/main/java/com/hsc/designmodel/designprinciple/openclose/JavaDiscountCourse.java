@@ -13,13 +13,15 @@ public class JavaDiscountCourse extends JavaCourse {
         super(name, price);
     }
 
-    @Override
-    public double getPrice() {
+//    @Override
+//    public double getPrice() {
+//        BigDecimal numOne = new BigDecimal(Double.toString(super.getPrice()));
+//        BigDecimal numTwo = new BigDecimal(Double.toString(0.8));
+//        return numOne.multiply(numTwo).doubleValue();
+//    }
+    public double getDiscountPrice(){
         BigDecimal numOne = new BigDecimal(Double.toString(super.getPrice()));
         BigDecimal numTwo = new BigDecimal(Double.toString(0.8));
         return numOne.multiply(numTwo).doubleValue();
-    }
-    public double getOrginalPrice(){
-        return super.getPrice();
     }
 }
