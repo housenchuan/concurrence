@@ -13,9 +13,9 @@ public class Test {
         System.out.println("方法结束width="+rectangle.getWidth()+"   length="+rectangle.getLength());
     }
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle();
-        rectangle.setWidth(10);
-        rectangle.setLength(20);
-        resize(rectangle);
+        Square rectangle = new Square();
+//        rectangle.setWidth(10);
+//        rectangle.setLength(20);
+//        resize(rectangle);
     }
 }
