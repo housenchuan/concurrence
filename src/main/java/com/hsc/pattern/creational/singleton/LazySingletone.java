@@ -8,7 +8,14 @@ package com.hsc.pattern.creational.singleton;
 
 public class LazySingletone {
     private static volatile LazySingletone instance = null;
-    private LazySingletone(){}
+    private static boolean flag = true;
+    private LazySingletone(){
+        if(flag){
+            flag = false;
+        }else{
+            throw new RuntimeException("禁止反射攻击!!");
+        }
+    }
     private static Object lock = new Object();
 
 

@@ -7,7 +7,11 @@ package com.hsc.pattern.creational.singleton;
  **/
 
 public class StaticInnerClassSingleton {
-    private StaticInnerClassSingleton(){}
+    private StaticInnerClassSingleton(){
+        if(null != InnerClass.instance){
+            throw new RuntimeException("禁止反射攻击!!");
+        }
+    }
 
     private static class InnerClass{
         private static StaticInnerClassSingleton instance = new StaticInnerClassSingleton();
