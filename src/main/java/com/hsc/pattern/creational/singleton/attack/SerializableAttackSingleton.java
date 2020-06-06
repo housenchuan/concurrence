@@ -1,4 +1,6 @@
-package com.hsc.pattern.creational.singleton;
+package com.hsc.pattern.creational.singleton.attack;
+
+import com.hsc.pattern.creational.singleton.HungrySingleton;
 
 import java.io.*;
 
