@@ -10,6 +10,12 @@ public class LazySingletone {
     private static volatile LazySingletone instance = null;
     private static boolean flag = true;
     private LazySingletone(){
+        //v1
+//        if(null != instance){
+//            throw new RuntimeException("禁止反射攻击!!");
+//        }
+
+        //v2
         if(flag){
             flag = false;
         }else{
