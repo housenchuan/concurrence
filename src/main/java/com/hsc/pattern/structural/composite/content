@@ -8,3 +8,5 @@
 
     缺点：限制类型时会比较复杂，使设计变得比较抽象。
 
+    应用：ArrayList.addAll()  HashMap.addAll()
+
