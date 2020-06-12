@@ -10,8 +10,11 @@ public class Test {
     public static void main(String[] args) {
         CourseVedio courseVedio = new CourseVedio("java");
         Staff staff = new Staff();
-        staff.addCommend(new OpenCourseVedioCommend(courseVedio));
-        staff.addCommend(new CloseCourseVedioCommend(courseVedio));
+        OpenCourseVedioCommend openCourseVedioCommend = new OpenCourseVedioCommend(courseVedio);
+        CloseCourseVedioCommend closeCourseVedioCommend = new CloseCourseVedioCommend(courseVedio);
+
+        staff.addCommend(openCourseVedioCommend);
+        staff.addCommend(closeCourseVedioCommend);
         staff.executeCommendList();
     }
 }
