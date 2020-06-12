@@ -1,9 +1,7 @@
 package com.hsc.practice.first.attack;
 
-import com.hsc.pattern.creational.singleton.HungrySingleton;
-import com.hsc.pattern.creational.singleton.LazySingletone;
+import com.hsc.designmodel.pattern.creational.singleton.LazySingletone;
 
-import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
