@@ -13,7 +13,7 @@ public class Test {
 //        Vedio vedio2 = new JavaVedio();
 //        vedio2.produce();
 
-//        VedioFactory vedioFactory = new VedioFactory();
+//        BananaFactory vedioFactory = new BananaFactory();
 //        Vedio java = vedioFactory.getVedio("python");
 //        java.produce();
         VedioFactory vedioFactory = new VedioFactory();
