@@ -7,6 +7,7 @@ package com.hsc.practice.first.design.creational.singleton;
  **/
 
 public class LazySingleton4 {
+    private LazySingleton4(){}
     private static volatile LazySingleton4 INSTANCE = null;
     private static Object lock = new Object();
     public static  LazySingleton4 getInstance(){

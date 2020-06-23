@@ -1,7 +1,7 @@
 package com.hsc.designmodel.pattern.behavioral.memento;
 
 /**
- * @ClassName: com.hsc.designmodel.pattern.behavioral.memento.Article
+ * @ClassName: com.hsc.designmodel.pattern.behavioral.memento.ThreadState
  * @auther: 侯森川
  * @Date: 2020-6-12 17:54
  **/

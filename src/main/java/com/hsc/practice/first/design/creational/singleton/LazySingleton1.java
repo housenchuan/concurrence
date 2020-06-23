@@ -7,6 +7,11 @@ package com.hsc.practice.first.design.creational.singleton;
  **/
 
 public class LazySingleton1 {
+    private LazySingleton1(){
+        if(null != INSTANCE){
+            throw new RuntimeException("禁止反射攻击");
+        }
+    }
     private static LazySingleton1 INSTANCE = null;
     public static LazySingleton1 getInstance(){
         if(null == INSTANCE){

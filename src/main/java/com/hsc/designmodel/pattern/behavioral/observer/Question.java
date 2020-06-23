@@ -1,7 +1,7 @@
 package com.hsc.designmodel.pattern.behavioral.observer;
 
 /**
- * @ClassName: Question
+ * @ClassName: Student
  * @auther: 侯森川
  * @Date: 2020-6-11 22:28
  **/

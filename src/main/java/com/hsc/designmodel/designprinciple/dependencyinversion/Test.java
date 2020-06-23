@@ -10,12 +10,12 @@ public class Test {
 //        javaICourse.printMathCourse();
 
         //v2
-//        Study study = new Study();
+//        User study = new User();
 //        study.studyCourse(new JavaICourse());
 //        study.studyCourse(new PythonICourse());
 
         //v3
-//        Study study = new Study(new JavaICourse());
+//        User study = new User(new JavaICourse());
 //        study.studyCourse();
         //v4
         Study study = new Study();

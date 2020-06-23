@@ -1,7 +1,7 @@
 package com.hsc.designmodel.pattern.behavioral.state;
 
 /**
- * @ClassName: com.hsc.designmodel.pattern.behavioral.state.CourseVedioContext
+ * @ClassName: com.hsc.designmodel.pattern.behavioral.state.VedioContext
  * @auther: 侯森川
  * @Date: 2020-6-13 12:43
  **/

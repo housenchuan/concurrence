@@ -8,7 +8,7 @@ public class Study {
 
 //v3
 //    private ICourse iCourse;
-//    public Study(ICourse iCourse) {
+//    public User(ICourse iCourse) {
 //        this.iCourse = iCourse;
 //    }
 //    public void studyCourse(){

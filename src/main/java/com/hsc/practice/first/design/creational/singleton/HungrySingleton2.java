@@ -7,6 +7,7 @@ package com.hsc.practice.first.design.creational.singleton;
  **/
 
 public class HungrySingleton2 {
+    private HungrySingleton2(){}
     private static HungrySingleton2 INSTANCE = null;
     static {
         INSTANCE = new HungrySingleton2();

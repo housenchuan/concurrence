@@ -7,6 +7,7 @@ package com.hsc.practice.first.design.creational.singleton;
  **/
 
 public class LazySingleton3 {
+    private LazySingleton3(){}
     private static LazySingleton3 INSTANCE = null;
     private static Object lock = new Object();
     public static synchronized LazySingleton3 getInstance(){
