@@ -36,10 +36,10 @@ public class FieldVisibility {
             threadTwo.start();
             threadOne.join();
             threadTwo.join();
-//            if(fb.a == 1 && fb.b == 3){
-//                System.out.println("a = "+fb.a+", b = " + fb.b);
-//                break;
-//            }
+            if(fb.a == 1 && fb.b == 3){
+                System.out.println("a = "+fb.a+", b = " + fb.b);
+                break;
+            }
         }
     }
 

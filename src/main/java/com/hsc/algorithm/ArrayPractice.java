@@ -86,8 +86,9 @@ public class ArrayPractice {
 
     /**
      * 字符串相加
-     * @param num1
-     * @param num2
+     *     8 5 4 3
+     * +   2 4 5 6
+     * = 1 0 9 9 9
      * @return 字符串相加的结果
      */
     public static String addStrings(String num1, String num2){
