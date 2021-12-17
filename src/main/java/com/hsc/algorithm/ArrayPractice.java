@@ -108,10 +108,49 @@ public class ArrayPractice {
         return sb.reverse().toString();
     }
 
+
+    /**
+     * 堆排序
+     * 大顶堆：完全二叉树且节点大于等于其左右子节点
+     * 小顶堆：完全二叉树且节点小于等于其左右子节点
+     * 思路：
+     *  1.构建大顶堆，上浮操作建堆，下沉操作建堆
+     *  2.排序 将堆顶的元素与数组末尾的元素进行交换，然后重新构建大顶堆，重复此操作
+     */
+    public static void stackSort(int arrs[]){
+        //1.构建大顶堆 首先从非叶子节点开始进行下沉操作
+        for (int i = arrs.length/2-1; i >=0 ; i--) {
+            buildBigStack(arrs,i,arrs.length);
+        }
+        //2.排序
+        for (int i = arrs.length-1; i > 0; i--) {
+            swap(arrs,0,i);
+            buildBigStack(arrs,0,i);
+        }
+    }
+    public static void buildBigStack(int arrs[],int i,int length){
+        for (int k=2*i; k+1< length; k=2*k) {
+            if(k+1<length && arrs[k]<arrs[k+1]){
+                k++;
+            }
+            if(arrs[i] < arrs[k]){
+                swap(arrs,i,k);
+                i = k;
+            }else{
+                break;
+            }
+        }
+    }
+    public static void swap(int arrs[],int a,int b){
+        int temp = arrs[a];
+        arrs[a] = arrs[b];
+        arrs[b] = temp;
+    }
     public static void main(String[] args) {
-        int arr[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
-        String num1 = "7234";
-        String num2 = "7237"; //02471
-        System.out.println(addStrings(num1,num2));
+        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
+        stackSort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
     }
 }
