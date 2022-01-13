@@ -1,6 +1,10 @@
 package com.hsc.algorithm;
 
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class ArrayPractice {
 
 
@@ -146,11 +150,33 @@ public class ArrayPractice {
         arrs[a] = arrs[b];
         arrs[b] = temp;
     }
-    public static void main(String[] args) {
-        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
-        stackSort(arr);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+
+    /**
+     * 在一个长为 字符串中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回 -1
+     */
+    public static int findAppearOnce(String str){
+        Map<String,Integer> map = new LinkedHashMap<String,Integer>();
+        for(int i=0;i<str.length();i++){
+            String temp = str.charAt(i)+"";
+            if(map.get(temp) == null){
+                map.put(temp,1);
+            }else{
+                map.put(temp,-1);
+            }
         }
+        for(Map.Entry<String,Integer> entry:map.entrySet()){
+            if(entry.getValue().intValue() == 1)return str.indexOf(entry.getKey());
+        }
+        return -1;
+    }
+
+
+    public static void main(String[] args) {
+//        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
+//        stackSort(arr);
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.println(arr[i]);
+//        }
+        System.out.println(findAppearOnce("google"));
     }
 }
