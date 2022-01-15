@@ -18,6 +18,17 @@ public class LinkedPractice {
         }
         return pre;
     }
+
+    /**
+     * 链表是否有环形
+     * @param head
+     * @return
+     */
+    public static boolean hasCycle(Node head){
+        return false;
+    }
+
+
     public static void main(String[] args) {
         Node head = new Node(1,null);
         Node nodeOne = new Node(2,null);

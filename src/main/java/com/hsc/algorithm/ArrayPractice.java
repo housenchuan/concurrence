@@ -2,6 +2,7 @@ package com.hsc.algorithm;
 
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -220,5 +221,6 @@ public class ArrayPractice {
 //            System.out.println(arr[i]);
 //        }
         System.out.println(findAppearOnce("google"));
+        new HashSet<>();
     }
 }
