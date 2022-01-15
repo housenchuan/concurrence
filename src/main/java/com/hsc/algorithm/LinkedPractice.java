@@ -28,6 +28,15 @@ public class LinkedPractice {
         return false;
     }
 
+    /**
+     * 相交链表
+     * @param headA
+     * @param headB
+     * @return
+     */
+    public static Node meetLinked(Node headA,Node headB){
+        return null;
+    }
 
     public static void main(String[] args) {
         Node head = new Node(1,null);
