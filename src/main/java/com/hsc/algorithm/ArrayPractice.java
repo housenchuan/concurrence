@@ -170,7 +170,49 @@ public class ArrayPractice {
         return -1;
     }
 
-
+    /**
+     * 从两个有序数组中找到中位数
+     * 思路：把找到中位数问题的转换成找到第k小的数的问题
+     * @param arr1
+     * @param arr2
+     */
+    public static double findMindNum(int arr1[],int arr2[]){
+        int totalLen = arr1.length+arr2.length;
+        if(totalLen%2==1){
+            double mid = findKmin(arr1,arr2,totalLen/2+1);
+            return mid;
+        }else{
+            double mid = (findKmin(arr1,arr2,totalLen/2-1)+findKmin(arr1,arr2,totalLen/2))/2.0;
+            return mid;
+        }
+    }
+    public static int findKmin(int arr1[],int arr2[],int k){
+        int index1 = 0;
+        int index2 = 0;
+        while (true) {
+            if(index1 == arr1.length){
+                return arr1[index1+k-1];
+            }
+            if(index2 == arr2.length){
+                return arr2[index2+k-1];
+            }
+            if(k == 1){
+                return Math.min(arr1[index1],arr2[index2]);
+            }
+            int half = k / 2;
+            int newIndex1 = Math.min(index1 + half, arr1.length) - 1;
+            int newIndex2 = Math.min(index2 + half, arr2.length) - 1;
+            int num1 = arr1[newIndex1];
+            int num2 = arr2[newIndex2];
+            if (num1 >= num2) {
+                index2 = newIndex2 + 1;
+                k -= (newIndex2 - index2 + 1);
+            } else {
+                index1 = newIndex1 + 1;
+                k -= (newIndex1 - index1 + 1);
+            }
+        }
+    }
     public static void main(String[] args) {
 //        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
 //        stackSort(arr);
