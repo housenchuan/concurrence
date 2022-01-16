@@ -1,4 +1,4 @@
-package com.hsc.algorithm;
+package com.hsc.algorithm.linked;
 
 import java.util.HashMap;
 import java.util.Map;

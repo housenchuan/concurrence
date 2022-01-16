@@ -1,4 +1,4 @@
-package com.hsc.algorithm;
+package com.hsc.algorithm.array;
 
 import java.util.Random;
 

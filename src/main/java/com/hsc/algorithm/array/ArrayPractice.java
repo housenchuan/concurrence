@@ -1,10 +1,7 @@
-package com.hsc.algorithm;
+package com.hsc.algorithm.array;
 
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ArrayPractice {
 
@@ -214,6 +211,29 @@ public class ArrayPractice {
             }
         }
     }
+
+    /**
+     * 在目标数组中找到两个数的和为target
+     * @param arr
+     * @param target
+     * @return
+     */
+    public static int[] twoNumSum(int arr[],int target){
+        return null;
+    }
+
+    /**
+     * 数组中的第 k 大的数字
+     * 给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
+     *
+     * 请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+     */
+    public static  int findKthLargest(int arr[],int k){
+        return 0;
+    }
+
+
+
     public static void main(String[] args) {
 //        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
 //        stackSort(arr);
@@ -221,6 +241,5 @@ public class ArrayPractice {
 //            System.out.println(arr[i]);
 //        }
         System.out.println(findAppearOnce("google"));
-        new HashSet<>();
     }
 }

@@ -1,4 +1,4 @@
-package com.hsc.algorithm;
+package com.hsc.algorithm.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package com.hsc.algorithm;
+package com.hsc.algorithm.stack;
 
 
 public class StackPractice {
@@ -39,6 +39,8 @@ public class StackPractice {
         arr[a] = arr[b];
         arr[b] = temp;
     }
+
+
 
     public static void main(String[] args) {
         int arr[] = {1,2,3,4,5,16,7,8,9,111,121,12,13,14,15,16,17};;

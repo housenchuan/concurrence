@@ -1,4 +1,4 @@
-package com.hsc.algorithm;
+package com.hsc.algorithm.linked;
 
 public class LinkedPractice {
 
@@ -35,6 +35,14 @@ public class LinkedPractice {
      * @return
      */
     public static Node meetLinked(Node headA,Node headB){
+        return null;
+    }
+
+
+    /**
+     * 合并两个有序链表
+     */
+    public Node mergeTwoLists(Node list1, Node list2) {
         return null;
     }
 

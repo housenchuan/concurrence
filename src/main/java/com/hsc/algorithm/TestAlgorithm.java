@@ -1,9 +1,6 @@
 package com.hsc.algorithm;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
@@ -203,5 +200,6 @@ public class TestAlgorithm {
 //        }
 //        HashMap map = new HashMap<>();
         String str = "a,a,a";
+        Deque deque = new LinkedList();
     }
 }
