@@ -85,4 +85,6 @@ public class ClimbStarisPractice {
         return (int)Math.round(fibn/sqrt5);
     }
 
+
+
 }

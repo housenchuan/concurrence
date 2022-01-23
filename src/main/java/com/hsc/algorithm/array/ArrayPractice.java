@@ -194,6 +194,88 @@ public class ArrayPractice {
     }
 
 
+    /**
+     * 三数和为0(超出内存限制)
+     * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+     * 注意：答案中不可以包含重复的三元组。
+     */
+    public static List<List<Integer>> threeSum_1(int nums[]){
+        int n = nums.length;
+        List<List<Integer>> list = new ArrayList<>();
+        if(null == nums || nums.length<3){
+            return list;
+        }
+        Arrays.sort(nums);
+
+        for (int first = 0; first < n; first++) {
+            if(nums[first]>0)return list;
+            if(first>0 || nums[first] == nums[first-1]){
+                continue;
+            }
+            int third = n-1;
+            int target = -nums[first];
+            for (int second = first+1; second < n; second++) {
+                if(second>first+1 && nums[second] == nums[second-1]){
+                    continue;
+                }
+                while (third>second && nums[second]+nums[third] > target){
+                    third--;
+                }
+                if(third == second){
+                    break;
+                }
+                if(nums[second]+nums[third] == target){
+                    List<Integer> tempList = new ArrayList<>();
+                    tempList.add(nums[first]);
+                    tempList.add(nums[second]);
+                    tempList.add(nums[third]);
+                    list.add(tempList);
+                }
+            }
+        }
+        return list;
+    }
+    /**
+     * 三数和为0--排序+双指针(通过)
+     * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+     * 注意：答案中不可以包含重复的三元组。
+     */
+    public static List<List<Integer>> threeSum_2(int nums[]){
+        int n = nums.length;
+        List<List<Integer>> list = new ArrayList<>();
+        if(null == nums || nums.length<3){
+            return list;
+        }
+        Arrays.sort(nums);
+
+        for (int first = 0; first < n; first++) {
+            if(nums[first]>0)return list;
+            if(first>0 && nums[first] == nums[first-1]){
+                continue;
+            }
+            int l=first+1;
+            int r=n-1;
+            int target = -nums[first];
+            while (l<r){
+                if (nums[l]+nums[r] == target){
+                    List<Integer> tempList = new ArrayList<>();
+                    tempList.add(nums[first]);
+                    tempList.add(nums[l]);
+                    tempList.add(nums[r]);
+                    list.add(tempList);
+                    while (l<r && nums[l]==nums[l+1])l++;
+                    while (l<r && nums[r]==nums[r-1])r--;
+                    l++;
+                    r--;
+                }else if(nums[l]+nums[r] > target){
+                    r--;
+                }else{
+                    l++;
+                }
+            }
+        }
+        return list;
+    }
 
     public static void main(String[] args) {
 //        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
