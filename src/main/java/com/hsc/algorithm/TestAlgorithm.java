@@ -183,23 +183,26 @@ public class TestAlgorithm {
 //        System.out.println(68&240);
 //        deadLock();
 //        ThreadPoolExecutor
-        int arrs[] = {1,2,3,6,7};
-        int temp = arrs[0]-arrs[1];
-        List<Integer> list =  new ArrayList<Integer>();
-        for (int i = 0; i < arrs.length-1; i++) {
-//             temp = Math.max(temp,arrs[i]-arrs[i+1]);
-            list.add(arrs[i]-arrs[i+1]);
-        }
-        for (Integer i : list) {
-            System.out.println(i);
-        }
-        System.out.println(temp);
+//        int arrs[] = {1,2,3,6,7};
+//        int temp = arrs[0]-arrs[1];
+//        List<Integer> list =  new ArrayList<Integer>();
+//        for (int i = 0; i < arrs.length-1; i++) {
+////             temp = Math.max(temp,arrs[i]-arrs[i+1]);
+//            list.add(arrs[i]-arrs[i+1]);
+//        }
+//        for (Integer i : list) {
+//            System.out.println(i);
+//        }
+//        System.out.println(temp);
 //        maopaoSort(arrs);
 //        for (int i = 0; i < arrs.length; i++) {
 //            System.out.println(arrs[i]);
 //        }
 //        HashMap map = new HashMap<>();
-        String str = "a,a,a";
-        Deque deque = new LinkedList();
+
+
+        String str1 = "abba";
+        System.out.println(str1.substring(0,2));
+
     }
 }

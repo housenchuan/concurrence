@@ -86,29 +86,7 @@ public class ArrayPractice {
         return -1;
     }
 
-    /**
-     * 字符串相加
-     *     8 5 4 3
-     * +   2 4 5 6
-     * = 1 0 9 9 9
-     * @return 字符串相加的结果
-     */
-    public static String addStrings(String num1, String num2){
-        StringBuilder sb = new StringBuilder("");
-        int i = num1.length()-1;
-        int j = num2.length()-1;
-        int carry = 0;
-        while (i>=0 || j>=0 || carry!=0){
-            int n1 = i>=0?num1.charAt(i)-'0':0;
-            int n2 = j>=0?num2.charAt(j)-'0':0;
-            int tmp = n1+n2+carry;
-            carry = tmp/10;
-            sb.append(tmp%10);
-            i--;
-            j--;
-        }
-        return sb.reverse().toString();
-    }
+
 
 
     /**
@@ -149,24 +127,7 @@ public class ArrayPractice {
         arrs[b] = temp;
     }
 
-    /**
-     * 在一个长为 字符串中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回 -1
-     */
-    public static int findAppearOnce(String str){
-        Map<String,Integer> map = new LinkedHashMap<String,Integer>();
-        for(int i=0;i<str.length();i++){
-            String temp = str.charAt(i)+"";
-            if(map.get(temp) == null){
-                map.put(temp,1);
-            }else{
-                map.put(temp,-1);
-            }
-        }
-        for(Map.Entry<String,Integer> entry:map.entrySet()){
-            if(entry.getValue().intValue() == 1)return str.indexOf(entry.getKey());
-        }
-        return -1;
-    }
+
 
     /**
      * 从两个有序数组中找到中位数
@@ -240,6 +201,6 @@ public class ArrayPractice {
 //        for (int i = 0; i < arr.length; i++) {
 //            System.out.println(arr[i]);
 //        }
-        System.out.println(findAppearOnce("google"));
+//        System.out.println(findAppearOnce("google"));
     }
 }
