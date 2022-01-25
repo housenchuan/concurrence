@@ -277,6 +277,14 @@ public class ArrayPractice {
         return list;
     }
 
+    /**
+     * 盛最多水的容器
+     *
+     */
+    public static int maxWater(int height[]){
+       return 0;
+    }
+
     public static void main(String[] args) {
 //        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
 //        stackSort(arr);

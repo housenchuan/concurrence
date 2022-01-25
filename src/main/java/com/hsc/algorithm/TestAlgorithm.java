@@ -200,7 +200,7 @@ public class TestAlgorithm {
 //        }
 //        HashMap map = new HashMap<>();
 
-
+        List<Integer> list = new ArrayList<>();
         String str1 = "abba";
         System.out.println(str1.substring(0,2));
 
