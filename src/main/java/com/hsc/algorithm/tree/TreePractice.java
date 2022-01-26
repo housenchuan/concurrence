@@ -47,6 +47,22 @@ public class TreePractice {
             }
         }
     }
+
+    /**
+     *二叉树的最近公共祖先--递归
+     * 中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+     */
+    public static TreeNode  lowestCommonAncest_1(TreeNode root, TreeNode p, TreeNode q) {
+        return null;
+    }
+    /**
+     *二叉树的最近公共祖先--hash存储父节点
+     * 中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+     */
+    public static TreeNode  lowestCommonAncest_2(TreeNode root, TreeNode p, TreeNode q) {
+        return null;
+    }
+
     public static void print(TreeNode tree){
         System.out.print(tree.name);
     }
