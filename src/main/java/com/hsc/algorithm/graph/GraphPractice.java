@@ -1,5 +1,7 @@
 package com.hsc.algorithm.graph;
 
+import org.checkerframework.checker.units.qual.A;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -81,4 +83,33 @@ public class GraphPractice {
         }
     }
 
+    /**
+     * 拓扑排序
+     */
+    public  void topSort(int []source){
+        List<Integer> result = new ArrayList<>();
+        boolean flag = true;
+        while (flag){
+            for (int i = 0; i < source.length; i++) {
+                if(source[i] == 1){
+                    return ;
+                }
+            }
+        }
+    }
+
+    /**
+     * 查找入度
+     */
+    public  int [] getSource(){
+        int result[] = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.size(); j++) {
+                if(edges[i][j]==1){
+                    result[j]+=1;
+                }
+            }
+        }
+        return result;
+    }
 }
