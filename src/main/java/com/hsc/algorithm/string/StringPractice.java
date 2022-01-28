@@ -6,6 +6,16 @@ import java.util.Map;
 public class StringPractice {
 
     /**
+     * 无重复字符的最长子串--滑动窗口
+     * 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
+     */
+    public int lengthOfLongestSubstring(String s) {
+
+        int result=0;
+        return result;
+    }
+
+    /**
      * 在一个长为 字符串中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回 -1
      */
     public static int findAppearOnce(String str){
