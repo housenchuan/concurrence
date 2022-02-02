@@ -285,7 +285,60 @@ public class ArrayPractice {
        return 0;
     }
 
+
+    /**
+     * 把字符串转换成整数
+     * 写一个函数 StrToInt，实现把字符串转换成整数这个功能。不能使用 atoi 或者其他类似的库函数。
+     * 首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。
+     * 当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。
+     * @param str
+     * @return
+     */
+    public static int strToInt(String str){
+        int len = str.length();
+        int res = 0;
+        if(len == 0) return res;
+        int sign = 0;
+        int num = Integer.MAX_VALUE/10;
+        int i=0;
+        while(str.charAt(i)==' '){
+            i++;
+            if(i==len) return res;
+        }
+        if(str.charAt(i)=='-')sign=1;
+        if(str.charAt(i)=='-' || str.charAt(i)=='+')i++;
+        for(;i<len;i++){
+            if(i==len || str.charAt(i)<'0' || str.charAt(i)>'9')  break;
+            if(res > num || res==num && str.charAt(i)>'7')
+                return sign==1?Integer.MIN_VALUE:Integer.MAX_VALUE;
+            res = res*10 + (str.charAt(i)-'0');
+        }
+        return sign==1?-res:res;
+    }
+
+    /**
+     * 寻找旋转排序数组中的最小值--二分法查找
+     */
+    public static void findMin(int nums[]){
+
+    }
+
+    /**
+     *最长递增子序列--动态规划
+     */
+    public int lengthOfLIS_1(int[] nums) {
+        return 0;
+    }
+    /**
+     *最长递增子序列--贪心算法+二分法查找
+     */
+    public int lengthOfLIS_2(int[] nums) {
+        return 0;
+    }
+
     public static void main(String[] args) {
+
+        System.out.println(strToInt("2147483646"));
 //        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
 //        stackSort(arr);
 //        for (int i = 0; i < arr.length; i++) {

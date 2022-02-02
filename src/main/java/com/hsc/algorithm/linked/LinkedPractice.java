@@ -86,6 +86,25 @@ public class LinkedPractice {
         }
         return null;
     }
+
+
+    /**
+     * 重排链表-线性表
+     * 不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+     * @return
+     */
+    public static Node reorderList_1(Node head){
+        return null;
+    }
+    /**
+     * 重排链表-找链表中点+链表反转+链表合并
+     * 不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+     * @return
+     */
+    public static Node reorderList_2(Node head){
+        return null;
+    }
+
     public static void main(String[] args) {
         Node head = new Node(1,null);
         Node nodeOne = new Node(2,null);

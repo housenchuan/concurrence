@@ -1,8 +1,6 @@
 package com.hsc.algorithm.tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Random;
+import java.util.*;
 
 public class TreePractice {
     /**
@@ -67,32 +65,46 @@ public class TreePractice {
         System.out.print(tree.name);
     }
 
+    /**
+     * 路径总和--广度优先搜索（层序遍历）
+     */
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+
+        return false;
+    }
+
     public static void main(String[] args) {
-        TreeNode a = new TreeNode("A");
-        TreeNode b = new TreeNode("B");
-        TreeNode c = new TreeNode("C");
-        a.left = b;
-        a.right = c;
-        TreeNode d = new TreeNode("D");
-        TreeNode e = new TreeNode("E");
-        b.left = d;
-        b.right = e;
-        TreeNode f = new TreeNode("F");
-        TreeNode g = new TreeNode("G");
-        c.left = f;
-        c.right = g;
-        before(a);
-        System.out.println("......前序遍历......");
-        mid(a);
-        System.out.println("......中序遍历......");
-        after(a);
-        System.out.println("......后续遍历......");
-        layer(a);
-        System.out.println("......层序遍历......");
-        Random random = new Random();
-        while (true) {
-            System.out.println(random.nextInt(7)+1);
-        }
+//        TreeNode a = new TreeNode("A");
+//        TreeNode b = new TreeNode("B");
+//        TreeNode c = new TreeNode("C");
+//        a.left = b;
+//        a.right = c;
+//        TreeNode d = new TreeNode("D");
+//        TreeNode e = new TreeNode("E");
+//        b.left = d;
+//        b.right = e;
+//        TreeNode f = new TreeNode("F");
+//        TreeNode g = new TreeNode("G");
+//        c.left = f;
+//        c.right = g;
+//        before(a);
+//        System.out.println("......前序遍历......");
+//        mid(a);
+//        System.out.println("......中序遍历......");
+//        after(a);
+//        System.out.println("......后续遍历......");
+//        layer(a);
+//        System.out.println("......层序遍历......");
+//        Random random = new Random();
+//        while (true) {
+//            System.out.println(random.nextInt(7)+1);
+//        }
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+
+        System.out.println(String.join("",list));
     }
 }
 

@@ -1,6 +1,8 @@
 package com.hsc.algorithm.string;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class StringPractice {
@@ -129,6 +131,56 @@ public class StringPractice {
             }
         }
         return str.substring(start,start+maxLen);
+    }
+
+
+    /**
+     * 剑指 Offer 38. 字符串的排列--递归+回溯算法
+     * 输入一个字符串，打印出该字符串中字符的所有排列。
+     */
+    public static String[] permutation(String s){
+        char[] arr = s.toCharArray();
+        boolean used[] = new boolean[arr.length];
+        List<String> result = new ArrayList<>();
+        List<String> path = new ArrayList<>();
+        String arrs[] = new String[arr.length];
+        backTrack(arr,used,result,path);
+        return result.toArray(arrs);
+    }
+    public static void backTrack(char[] arr,boolean used[],List<String> result,List<String> path){
+        if(path.size() == arr.length){
+            result.add(String.join("",path));
+            return;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if(i>0 && arr[i]==arr[i-1] && used[i-1]==false){
+                continue;
+            }
+            if(used[i]==false){
+                used[i]=true;
+                path.add(arr[i]+"");
+                backTrack(arr,used,result,path);
+                path.remove(path.size()-1);
+                used[i]=false;
+            }
+        }
+    }
+
+    /**
+     * 全排列--递归+回溯算法
+     * 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
+     * @return
+     */
+    public static List<List<Integer>> permute(int[] nums){
+        return null;
+    }
+
+    /**
+     * 组合总数--递归+回溯算法
+     */
+    public static List<List<Integer>> combinationSum(int[] nums){
+        return null;
     }
 
     public static void main(String[] args) {
