@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class ArraySort {
     /**
-     * 1.冒泡排序-基础版【稳定算法】
+     * 1.冒泡排序-基础版【稳定】
      */
     public static void bubbleSort(int arr[]){
         for (int i = 0; i < arr.length-1; i++) {
@@ -28,7 +28,7 @@ public class ArraySort {
     }
 
     /**
-     * 1.1 冒泡排序-优化版【稳定算法】
+     * 1.1 冒泡排序-优化版【稳定】
      * 如果没有交换则说明剩下的元素已经是从小到大的了即跳出循环
      */
     public static void bubbleSort_1(int arr[]){
@@ -48,7 +48,7 @@ public class ArraySort {
     }
 
     /**
-     * 2.选择排序【不稳定算法】
+     * 2.选择排序【不稳定】
      * 定义一个记录最小的元素下标，然后循环一次后面的元素，找到最小的元素将其放到前面排好序的序列
      */
     public static void selectSort(int arr[]){
@@ -64,25 +64,50 @@ public class ArraySort {
     }
 
     /**
-     * 3.插入排序【稳定算法】
+     * 3.插入排序【稳定】
      * 每一步都将一个待排数字插入到已经排序序列的适当位置，直到全部插入为止
      */
     public static void insertSort(int arr[]){
         for (int i = 1; i < arr.length; i++) {
-            int j=i-1;
-            int temp = arr[i];
-            while (j>=0 && arr[j]>temp){
-                arr[j+1] = arr[j];
-                j--;
+//            int j=i-1;
+//            int temp = arr[i];
+//            while (j>=0 && arr[j]>temp){
+//                arr[j+1] = arr[j];
+//                j--;
+//            }
+//            arr[j+1] = temp;
+            for (int j = i; j>0 ; j--){
+                if(arr[j-1]>arr[j]){
+                    int temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                }else break;
             }
-            arr[j+1] = temp;
+        }
+    }
+
+    /**
+     * 4.希尔排序-插入排序优化版【不稳定】
+     *  对数组进行分组，组内使用插入排序
+     */
+    public static void shellSort(int arr[]){
+        for (int gap = arr.length/2; gap>0; gap/=2) {
+            for (int i = gap; i < arr.length; i++) {
+                for (int j = i; j>0 ; j-=gap) {
+                    if(j>=gap && arr[j-gap]>arr[j]){
+                        int temp = arr[j];
+                        arr[j] = arr[j-gap];
+                        arr[j-gap] = temp;
+                    }else break;
+                }
+            }
         }
     }
 
 
     public static void main(String[] args) {
         int arr[] = {5,1,0,2,6,8,3,9,4,7,19,13,-1};
-        insertSort(arr);
+        shellSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
