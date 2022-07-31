@@ -73,38 +73,37 @@ public class TreePractice {
         return false;
     }
 
-    public static void main(String[] args) {
-//        TreeNode a = new TreeNode("A");
-//        TreeNode b = new TreeNode("B");
-//        TreeNode c = new TreeNode("C");
-//        a.left = b;
-//        a.right = c;
-//        TreeNode d = new TreeNode("D");
-//        TreeNode e = new TreeNode("E");
-//        b.left = d;
-//        b.right = e;
-//        TreeNode f = new TreeNode("F");
-//        TreeNode g = new TreeNode("G");
-//        c.left = f;
-//        c.right = g;
-//        before(a);
-//        System.out.println("......前序遍历......");
-//        mid(a);
-//        System.out.println("......中序遍历......");
-//        after(a);
-//        System.out.println("......后续遍历......");
-//        layer(a);
-//        System.out.println("......层序遍历......");
-//        Random random = new Random();
-//        while (true) {
-//            System.out.println(random.nextInt(7)+1);
-//        }
-        List<String> list = new ArrayList<>();
-        list.add("a");
-        list.add("b");
-        list.add("c");
 
-        System.out.println(String.join("",list));
+    public static void main(String[] args) {
+        TreeNode a = new TreeNode("A");
+        TreeNode b = new TreeNode("B");
+        TreeNode c = new TreeNode("C");
+        a.left = b;
+        a.right = c;
+        TreeNode d = new TreeNode("D");
+        TreeNode e = new TreeNode("E");
+        b.left = d;
+        b.right = e;
+        TreeNode f = new TreeNode("F");
+        TreeNode g = new TreeNode("G");
+        c.left = f;
+        c.right = g;
+        before(a);
+        System.out.println("......前序遍历......");
+        mid(a);
+        System.out.println("......中序遍历......");
+        after(a);
+        System.out.println("......后续遍历......");
+        layer(a);
+        System.out.println("......层序遍历......");
+        Random random = new Random();
+        System.out.println("201".compareTo("202"));
+//        List<String> list = new ArrayList<>();
+//        list.add("a");
+//        list.add("b");
+//        list.add("c");
+//
+//        System.out.println(String.join("",list));
     }
 }
 

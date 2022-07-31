@@ -86,9 +86,6 @@ public class ArrayPractice {
         return -1;
     }
 
-
-
-
     /**
      * 堆排序
      * 大顶堆：完全二叉树且节点大于等于其左右子节点
@@ -96,8 +93,57 @@ public class ArrayPractice {
      * 思路：
      *  1.构建大顶堆，上浮操作建堆，下沉操作建堆
      *  2.排序 将堆顶的元素与数组末尾的元素进行交换，然后重新构建大顶堆，重复此操作
+     *
+     *  时间复杂度O(nlogn)
+     *  空间复杂度O(1)
      */
-    public static void stackSort(int arrs[]){
+    public static void stackSort1(int nums[]){
+        if(null ==nums || nums.length==0)return;
+        int len = nums.length;
+        //step one: to build big stack
+        buildBigStack(nums,len);
+        //step two: to sort
+        for(int i=nums.length-1; i>0; i--){
+            swap1(nums,0,i);
+            len--;
+            heapify(nums,0,len);
+        }
+    }
+    public static void buildBigStack(int nums[],int len){
+        for(int i=len/2-1; i>=0; i--) {
+            heapify(nums, i, len);
+        }
+    }
+    public static void heapify(int nums[],int i,int len){
+        int left = 2*i+1;
+        int right = 2*i+2;
+        int largestNumIndex = i;
+        if(left<len && nums[left]>nums[largestNumIndex]){
+            largestNumIndex=left;
+        }
+        if(right<len && nums[right]>nums[largestNumIndex]){
+            largestNumIndex=right;
+        }
+        if(largestNumIndex != i){//the number of nums-i is not the largest
+            swap1(nums,i,largestNumIndex);
+            heapify(nums,largestNumIndex,len);
+        }
+    }
+    public static void swap1(int nums[],int a,int b){
+        int num = nums[b];
+        nums[b] = nums[a];
+        nums[a] = num;
+    }
+
+    /**
+     * 堆排序--代码二
+     * 大顶堆：完全二叉树且节点大于等于其左右子节点
+     * 小顶堆：完全二叉树且节点小于等于其左右子节点
+     * 思路：
+     *  1.构建大顶堆，上浮操作建堆，下沉操作建堆
+     *  2.排序 将堆顶的元素与数组末尾的元素进行交换，然后重新构建大顶堆，重复此操作
+     */
+    public static void stackSort2(int arrs[]){
         //1.构建大顶堆 首先从非叶子节点开始进行下沉操作
         for (int i = arrs.length/2-1; i >=0 ; i--) {
             buildBigStack(arrs,i,arrs.length);
@@ -336,14 +382,92 @@ public class ArrayPractice {
         return 0;
     }
 
+
+    public static int lengthOfLIS(int[] nums) {
+        int dp[] = new int[nums.length];
+        int res=0;
+        for(int num : nums){
+            int i=0,j=res;
+            while(i<j){
+                int m = (i+j)/2;
+                if(dp[m]<num)i=m+1;
+                else j=m;
+            }
+            dp[i] = num;
+            if(res==j)res++;
+        }
+        return res;
+    }
+
+    public static boolean findNumberIn2DArray(int[][] matrix, int target) {
+        if(null == matrix || matrix.length==0) return false;
+        int i=matrix[0].length-1,j=0;
+        //从左下角开始搜索
+        while(i>=0 && j<matrix[0].length){
+            if(target<matrix[i][j])i--;
+            else if(target>matrix[i][j])j++;
+            else return true;
+        }
+        return false;
+    }
+
+    /**
+     * 打印从1到最大的n位数--考虑大数的情况
+     * @param n
+     * @return
+     */
+    static int n;
+    static char [] loop = new char[]{'0','1','2','3','4','5','6','7','8','9'};
+    static char [] num;
+    static StringBuilder res = new StringBuilder();
+    static int start=0,nine=0;
+    public static String printNumbers(int n) {
+        ArrayPractice.n = n;
+        num = new char[n];
+        start=n-1;
+        dfs(0);
+        res.deleteCharAt(res.length()-1);
+        return res.toString();
+    }
+    public static void dfs(int x){
+        if(x==n){
+            String s = String.valueOf(num).substring(start);
+            if(!s.equals("0"))res.append(s+",");
+            if(n-start==nine) start--;
+            //n=3  start=2  nine=0
+            return;
+        }
+        for(char i : loop){
+            if(i=='9') nine++;
+            num[x]=i;
+            dfs(x+1);
+        }
+        nine--;
+    }
+
+    public static boolean validateStackSequences(int[] pushed, int[] popped) {
+        int i=0,j=popped.length-1;
+        List list =  Arrays.asList(pushed);
+        LinkedList<Integer> stack = new LinkedList<>();
+        while(true){
+            if(i==pushed.length-1 && j==0)return true;
+            if(i>=pushed.length || j<0) return false;
+            int temp = (int)list.get(i);
+            if(temp == popped[j]){
+                stack.push(temp);
+                i++;
+                j--;
+            }else{
+                stack.pop();
+                list.remove(i);
+                list.add(temp);
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
-        System.out.println(strToInt("2147483646"));
-//        int arr[] = {1,1,2,3,4,5,7,7,8,9,111,121,12,13,14,15,16,11,11,11,17};
-//        stackSort(arr);
-//        for (int i = 0; i < arr.length; i++) {
-//            System.out.println(arr[i]);
-//        }
-//        System.out.println(findAppearOnce("google"));
+       ArrayList<Integer> list = new ArrayList<>();
+       Arrays.asList();
     }
 }

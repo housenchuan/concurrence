@@ -1,9 +1,6 @@
 package com.hsc.algorithm.string;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StringPractice {
 
@@ -193,7 +190,10 @@ public class StringPractice {
         return null;
     }
 
+
+
     public static void main(String[] args) {
-        System.out.println(longestHwStr_2("babad"));
+        System.out.println('\0');
+        String str = "";
     }
 }
