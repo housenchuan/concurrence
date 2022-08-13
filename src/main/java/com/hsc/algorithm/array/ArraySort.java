@@ -1,6 +1,8 @@
 package com.hsc.algorithm.array;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * java的十种排序
@@ -12,6 +14,8 @@ import java.util.Arrays;
  * OUTPUT2：（3,2 ），（4,3），（4,5），（5,4），（6,4） 非稳定排序
  */
 public class ArraySort {
+
+    int temp[];
     /**
      * 1.冒泡排序-基础版【稳定】
      */
@@ -105,9 +109,75 @@ public class ArraySort {
     }
 
 
+    /**
+     * 5.归并排序-分治【稳定】
+     * 时间复杂度:O(nlogn)
+     * 空间复杂度:O(n)
+     */
+    public static void mergeSort(int arr[]){
+        int temp[] = new int[arr.length];
+        sort(temp,arr,0,arr.length-1);
+    }
+    //分
+    public static void sort(int temp[],int arr[],int l,int r){
+        if(l==r) return;
+        int mid = l+(r-l)/2;
+        sort(temp,arr,l,mid);
+        sort(temp,arr,mid+1,r);
+        merge(temp,arr,l,mid,r);
+    }
+    //治(将两个数组合并)
+    public static void merge(int temp[],int arr[],int l,int mid,int r){
+        for(int i=l;i<=r;i++) temp[i] = arr[i];
+        int cnt = l;
+        int i=l,j=mid+1;
+        while (i<=mid || j<=r){
+            if(i>mid) arr[cnt++] = temp[j++];
+            else if(j>r) arr[cnt++] = temp[i++];
+            else if(temp[i]<temp[j]) arr[cnt++] = temp[i++];
+            else arr[cnt++] = temp[j++];
+        }
+    }
+
+    /**
+     *6.快速排序【不稳定】
+     * 时间复杂度：O(nlogn)
+     * 空间复杂度：O(logn)
+     */
+    public static void quickSort(int arr[],int left,int right){
+        if(left >= right)return;
+        int l = left;
+        int r = right;
+        int temp = arr[l];
+        while (l<r){
+            while (l<r && arr[r]>temp) r--;
+            if(l<r){
+                arr[l] = arr[r];
+                l++;
+            }
+            while (l<r && arr[l]<temp) l++;
+            if(l<r){
+                arr[r] = arr[l];
+                r--;
+            }
+        }
+        arr[l] = temp;
+        quickSort(arr,left,r-1);
+        quickSort(arr,r+1,right);
+    }
+
+    /**
+     *7.堆排序【不稳定】
+     * 时间复杂度：O(nlogn)
+     * 空间复杂度：O(1)
+     */
+    public static void heapSort(int arr[]){
+
+    }
+
     public static void main(String[] args) {
         int arr[] = {5,1,0,2,6,8,3,9,4,7,19,13,-1};
-        shellSort(arr);
+        quickSort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
 }
